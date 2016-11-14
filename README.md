@@ -5,7 +5,7 @@ dmap is a Golang implementation of a fast concurrent map, accessible from the ne
 
 ## Architecture
 The concurrent map implementation is not lock-free but it's sharded and disciplinate the contention with RW (Read/Write) locks. UDP, TCP and HTTP servers expose the concurrent map operations over the network. For the UDP and TCP versions, a lightweight text protocol has been developed getting inspiration from Redis'; instead, for the HTTP version the JSON data format has been used on top of the HTTP protocol itself.
-Hashing was initially used to address the shards, then from a performance benchmark it came up that it was too slow so the shard addressing is realized just picking the first byte of the key (0 to 255 nuber to address one of the 256 shards); this is not going to bring an homogeneous distribution and so contention avoidance (shards are used to spread out the entries avoiding contention), and therefore is something to be worked on. 
+Hashing was initially used to address the shards, then from a performance benchmark it came up that it was too slow so the shard addressing is realized just picking the first byte of the key (0 to 255 number to address one of the 256 shards); this is not going to bring an homogeneous distribution and so contention avoidance (shards are used to spread out the entries avoiding contention), and therefore is something to be worked on. 
 
 ### Wire Protocol
 The concurrent map provides 5 main operations.
