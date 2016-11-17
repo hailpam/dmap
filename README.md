@@ -42,8 +42,7 @@ The response is in JSON and in the format: ```{ "outcome": "KO", "error": "<erro
 Golang compiles to executable binaries. So, it should be enough to run:
 
 ```
-$> ./dmap
-go build && ./dmap 
+$> go build && ./server/server 
 2016/11/14 21:33:04 info: bootstrapping the UDP Server loop: localhost:12345
 2016/11/14 21:33:04 info: bootstrapping the TCP Server loop: localhost:12346
 2016/11/14 21:33:04 info: bootstrapping the HTTP Server loop: localhost:8080
@@ -68,7 +67,7 @@ OK=value
 from the server perspective:
 
 ```
-[developer@localhost dmap]$ go build && ./dmap 
+[hailpam@localhost dmap]$ go build && ./server/server 
 2016/11/14 21:33:04 info: bootstrapping the UDP Server loop: localhost:12345
 2016/11/14 21:33:04 info: bootstrapping the TCP Server loop: localhost:12346
 2016/11/14 21:33:04 info: bootstrapping the HTTP Server loop: localhost:8080
