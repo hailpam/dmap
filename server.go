@@ -1,4 +1,4 @@
-package main
+package dmap
 
 import (
 	"encoding/json"
@@ -64,7 +64,7 @@ func (ms *MapServer) execute(buf []byte) (string, error) {
 		ms.m.Clear()
 		return fmt.Sprintf("OK=%d", ms.m.Size()), nil
 	default:
-		return "", errors.New("KO=Unrecognized command: <PUT|GET|SIZE|CLEAR> [<key> [value]]")
+		return "", errors.New("KO=Unrecognized command: <PUT|GET|SIZE|DEL|CLEAR> [<key> [value]]")
 	}
 }
 
