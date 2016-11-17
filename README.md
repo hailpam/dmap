@@ -36,7 +36,7 @@ In case of any error, the response is: ```KO=<error_messsage>```.
 - *Clear*. ```DELETE /api/v1/map?key=*```
 - *Size*. ```GET /api/v1/map?key=*```
 
-The response is in JSON and in the format: ```{ "outcome": "KO", "error": "<error_message>" }```, in case of error, or ```{ "outcome": "KO", "<size>|<value>|": "<X>" }``` in case of success, and according to the service invoked.
+The response is in JSON and in the format: ```{ "outcome": "KO", "error": "<error_message>" }```, in case of error, or ```{ "outcome": "OK", "<size>|<value>": "<X>" }``` in case of success, and according to the service invoked.
 
 ## Run the Server
 Golang compiles to executable binaries. So, it should be enough to run:
