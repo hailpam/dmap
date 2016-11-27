@@ -65,6 +65,7 @@ func (m *Map) Size() int {
 }
 
 func index(key string) uint8 {
-	c := []byte(key)
-	return c[0]
+	// c := []byte(key)
+    // TODO try CRC
+	return key[0]
 }
