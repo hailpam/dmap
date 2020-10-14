@@ -1,6 +1,4 @@
-# dmap (distributed map)
-
-[![Build Status](https://travis-ci.org/hailpam/dmap.svg?branch=master)](https://travis-ci.org/hailpam/dmap)
+# dmap (distributed map) [![Build Status](https://travis-ci.org/hailpam/dmap.svg?branch=master)](https://travis-ci.org/hailpam/dmap)
 
 ## Rationale
 dmap is a Golang implementation of a fast concurrent map, accessible from the network. Clients can put/get/remove their key/value tuples using UDP, TCP or HTTP: client API allows to pick the transport transparently.
