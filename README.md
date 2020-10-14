@@ -40,6 +40,20 @@ In case of any error, the response is: ```KO=<error_messsage>```.
 
 The response is in JSON and in the format: ```{ "outcome": "KO", "error": "<error_message>" }```, in case of error, or ```{ "outcome": "OK", "<size>|<value>": "<X>" }``` in case of success, and according to the service invoked.
 
+## Build
+
+```bash
+$> make build 
+echo "/Users/pmaresca/Developments/Workspaces/Golang/src/dmap"
+/Users/pmaresca/Developments/Workspaces/Golang/src/dmap
+go build .
+```
+
+```bash
+$> make binary
+go build -o dmap-server server/main.go
+```
+
 ## Run the Server
 Golang compiles to executable binaries. So, it should be enough to run:
 
@@ -84,7 +98,7 @@ the GET shows up into the served operations.
 dmap comes up with tests for three three conenctors (UDP, TCP and HTTP) and the Client API. For example, if only the HTTP Client API wants to be tested:
 
 ```bash
-go test -run=TestHTTPMapClient -v
+$> make test
 === RUN   TestHTTPMapClient
 2016/11/14 19:58:22 info: bootstrapping the HTTP Server loop: localhost:8080
 2016/11/14 19:58:23 info: serving POST  map[key:key12345 value:value12345]
