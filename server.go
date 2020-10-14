@@ -112,7 +112,7 @@ func (us *UDPMapServer) Serve() {
 		if err != nil {
 			continue
 		}
-		log.Printf("info: received %d: %s from: %v\n", l, string(buf[:]), r)
+		log.Printf("info: received %d: %s from: %v", l, string(buf[:]), r)
 		outcome, err := us.execute(buf[:l])
 		if err != nil {
 			us.conn.WriteToUDP([]byte(err.Error()), r)
@@ -164,7 +164,7 @@ func (ts *TCPMapServer) Serve() {
 	for ts.up {
 		conn, err := ts.conn.AcceptTCP()
 		if err != nil {
-			log.Printf("error: accepting connection: %s\n", err.Error())
+			log.Printf("error: accepting connection: %s", err.Error())
 			continue
 		}
 		go func(conn *net.TCPConn, m *Map, ack bool) {
@@ -175,7 +175,7 @@ func (ts *TCPMapServer) Serve() {
 					log.Printf("error: not able to read: %s\n", err.Error())
 					return
 				}
-				log.Printf("info: received %d: %s\n", l, string(buf[:]))
+				log.Printf("info: received %d: %s", l, string(buf[:]))
 				if ts.checkExit(buf[:l]) {
 					conn.Close()
 					return

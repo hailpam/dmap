@@ -76,11 +76,11 @@ func TestTCPMapClient(t *testing.T) {
 		t.Logf("error: unable to dial in: %s\n", err.Error())
 		t.Fail()
 	}
-	// err = uc.Put("key12345", []byte("value12345"))
-	// if err != nil {
-	// 	t.Logf("error: unable to store: %s\n", err.Error())
-	// 	t.Fatal()
-	// }
+	err = uc.Put("key12345", []byte("value12345"))
+	if err != nil {
+	 	t.Logf("error: unable to store: %s\n", err.Error())
+	 	t.Fatal()
+	 }
 	b, err := uc.Get("key12345")
 	if err != nil {
 		t.Logf("error: unable to retrieve: %s\n", err.Error())

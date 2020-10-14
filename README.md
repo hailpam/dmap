@@ -41,8 +41,8 @@ The response is in JSON and in the format: ```{ "outcome": "KO", "error": "<erro
 ## Run the Server
 Golang compiles to executable binaries. So, it should be enough to run:
 
-```
-$> go build && ./server/server 
+```bash
+$> make run 
 2016/11/14 21:33:04 info: bootstrapping the UDP Server loop: localhost:12345
 2016/11/14 21:33:04 info: bootstrapping the TCP Server loop: localhost:12346
 2016/11/14 21:33:04 info: bootstrapping the HTTP Server loop: localhost:8080
@@ -66,8 +66,8 @@ OK=value
 
 from the server perspective:
 
-```
-[hailpam@localhost dmap]$ go build && ./server/server 
+```bash
+$> make run
 2016/11/14 21:33:04 info: bootstrapping the UDP Server loop: localhost:12345
 2016/11/14 21:33:04 info: bootstrapping the TCP Server loop: localhost:12346
 2016/11/14 21:33:04 info: bootstrapping the HTTP Server loop: localhost:8080
@@ -81,7 +81,7 @@ the GET shows up into the served operations.
 ## Run the Tests
 dmap comes up with tests for three three conenctors (UDP, TCP and HTTP) and the Client API. For example, if only the HTTP Client API wants to be tested:
 
-```
+```bash
 go test -run=TestHTTPMapClient -v
 === RUN   TestHTTPMapClient
 2016/11/14 19:58:22 info: bootstrapping the HTTP Server loop: localhost:8080
@@ -99,4 +99,3 @@ go test -run=TestHTTPMapClient -v
 PASS
 ok  	dmap	2.015s
 ```
-
