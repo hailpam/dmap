@@ -7,6 +7,7 @@ clean:
 	rm -f dmap-server
 
 build:
+	echo "${PWD}"
 	go build .
 	go build -o dmap-server server/main.go
 
