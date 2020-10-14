@@ -1,6 +1,9 @@
 
+.PHONY: travis
+travis: clean build test
+
 .PHONY: all
-all: clean build test
+all: clean build binary test
 
 .PHONY: build test clean
 clean:
@@ -9,6 +12,8 @@ clean:
 build:
 	echo "${PWD}"
 	go build .
+
+binary:
 	go build -o dmap-server server/main.go
 
 test:
