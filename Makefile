@@ -1,4 +1,7 @@
 
+.PHONY: all
+all: clean build test
+
 .PHONY: build test clean
 clean:
 	rm -f dmap-server
@@ -13,5 +16,3 @@ test:
 run:
 	./dmap-server
 
-.PHONY: all
-all: clean build test
